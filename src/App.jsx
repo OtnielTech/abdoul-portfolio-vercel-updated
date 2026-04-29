@@ -151,7 +151,7 @@ function App() {
                 Transformer vos données et vos projets en décisions stratégiques à fort impact.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                Je suis Abdoul Otniel BONKOUNGOU, ingénieur en génie civil, statistiques de l’environnement et big data. J’interviens également sur les enjeux d’environnement et de changement climatique, ainsi que dans le secteur humanitaire, notamment WASH. J’aide les entreprises, ONG, recruteurs et institutions à exploiter leurs données pour mieux piloter, décider et performer.
+                Je suis A. Otniel, ingénieur en génie civil, statistiques de l’environnement et big data. J’interviens également sur les enjeux d’environnement et de changement climatique, ainsi que dans le secteur humanitaire, notamment WASH. J’aide les entreprises, ONG, recruteurs et institutions à exploiter leurs données pour mieux piloter, décider et performer.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-600 px-7 py-4 font-semibold text-white shadow-lg shadow-cyan-600/20 transition hover:bg-cyan-700">
