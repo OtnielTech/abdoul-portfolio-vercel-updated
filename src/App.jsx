@@ -8,37 +8,34 @@ const Icon = ({ children, className = "" }) => (
 
 const services = [
   {
-    icon: <Icon className="h-6 w-6">📊</Icon>,
-    title: "Analyse de données & dashboards",
-    text: "Création de tableaux de bord Power BI clairs, interactifs et orientés décision pour suivre les indicateurs clés.",
+    tag: "SQL",
+    icon: "🗄️",
+    title: "SQL avancé & qualité des données",
+    text: "Requêtes complexes, vues métier, optimisation, contrôle de cohérence et préparation de données fiables.",
+    points: ["Requêtes avancées", "Optimisation", "Contrôle qualité"],
   },
   {
-    icon: <Icon className="h-6 w-6">🗄️</Icon>,
-    title: "Data engineering & traitement",
-    text: "Structuration, nettoyage et transformation des données pour construire des bases fiables et exploitables.",
+    tag: "XL",
+    icon: "📊",
+    title: "Excel finance & reporting",
+    text: "Modélisation financière, automatisation, analyses d’écarts, tableaux de bord et fichiers professionnels.",
+    points: ["Modèles financiers", "Automatisation", "Analyse d’écarts"],
   },
   {
-    icon: <Icon className="h-6 w-6">📈</Icon>,
-    title: "Modélisation statistique",
-    text: "Analyse statistique appliquée à l’environnement, au climat et aux problématiques métiers complexes.",
+    tag: "BI",
+    icon: "📈",
+    title: "Power BI & dashboards exécutifs",
+    text: "Data model, DAX, storytelling visuel, KPI interactifs et reporting orienté décision stratégique.",
+    points: ["DAX & data model", "Dashboards KPI", "Reporting exécutif"],
   },
   {
-    icon: <Icon className="h-6 w-6">🏗️</Icon>,
-    title: "Optimisation de projets d’ingénierie",
-    text: "Appui data et technique pour améliorer le pilotage, la performance et le suivi des projets de génie civil.",
-  },
-  {
-    icon: <Icon className="h-6 w-6">🎯</Icon>,
-    title: "Conseil en décision stratégique",
-    text: "Transformation des données brutes en recommandations concrètes pour accélérer la prise de décision.",
-  },
-  {
-    icon: <Icon className="h-6 w-6">🧭</Icon>,
-    title: "Gestion de projet",
-    text: "Pilotage structuré de projets avec une approche certifiée PRINCE2, PMP/PMI et orientée résultats.",
+    tag: "PY",
+    icon: "🐍",
+    title: "Python / pandas & automatisation",
+    text: "Nettoyage, rapprochements, analyses exploratoires, traitements récurrents et automatisation de workflows data.",
+    points: ["pandas", "Nettoyage data", "Automatisation"],
   },
 ];
-
 const skills = [
   "Génie civil",
   "Statistiques de l’environnement",
@@ -200,7 +197,7 @@ function App() {
               </div>
               <div className="rounded-[1.5rem] bg-slate-950 p-8 text-white">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">Profil premium</p>
-                <h2 className="mt-4 text-3xl font-bold">Ingénieur Data & Génie Civil</h2>
+                <h2 className="mt-4 text-3xl font-bold">Ingénieur Data & Génie Civil & Environnement</h2>
                 <p className="mt-4 leading-7 text-slate-300">Un profil hybride capable de relier la technique, la donnée, l’environnement et la stratégie projet.</p>
                 <div className="mt-8 grid gap-4">
                   {["Certifié PL-300 Power BI", "Certifié PRINCE2", "Certifié PMP / PMI", "Disponible freelance & recrutement"].map((item) => (
@@ -232,18 +229,78 @@ function App() {
           </div>
         </section>
 
-        <section id="services" className="bg-white px-6 py-20 lg:px-8">
-          <SectionTitle eyebrow="Services" title="6 services pour transformer vos données en valeur" subtitle="De l’analyse au pilotage projet, chaque service est pensé pour générer clarté, performance et décision." />
-          <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <div key={service.title} className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition hover:border-cyan-300 hover:bg-white hover:shadow-xl">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-white transition group-hover:bg-cyan-600">{service.icon}</div>
-                <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
-                <p className="mt-3 leading-7 text-slate-600">{service.text}</p>
+        <section id="services" className="relative overflow-hidden bg-white px-6 py-24 lg:px-8">
+  <div className="absolute left-1/2 top-10 -z-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-100/60 blur-3xl" />
+
+  <div className="relative z-10">
+    <SectionTitle
+      eyebrow="Services premium"
+      title="Des compétences data transformées en solutions concrètes"
+      subtitle="SQL, Excel, Power BI et Python ne sont pas seulement des outils : ce sont des leviers pour fiabiliser vos données, automatiser vos reportings et accélérer vos décisions."
+    />
+
+    <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {services.map((service) => (
+        <div
+          key={service.title}
+          className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-7 transition duration-300 hover:-translate-y-2 hover:border-cyan-300 hover:bg-white hover:shadow-2xl hover:shadow-cyan-100"
+        >
+          <div className="absolute right-0 top-0 h-28 w-28 translate-x-10 -translate-y-10 rounded-full bg-cyan-100 opacity-0 blur-2xl transition group-hover:opacity-100" />
+
+          <div className="relative mb-7 flex items-center justify-between">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-950 text-2xl text-white transition group-hover:bg-cyan-600">
+              {service.icon}
+            </div>
+            <span className="rounded-full bg-cyan-50 px-4 py-2 text-sm font-black tracking-widest text-cyan-700 ring-1 ring-cyan-100">
+              {service.tag}
+            </span>
+          </div>
+
+          <h3 className="relative text-xl font-black leading-snug text-slate-950">
+            {service.title}
+          </h3>
+
+          <p className="relative mt-4 min-h-[120px] leading-7 text-slate-600">
+            {service.text}
+          </p>
+
+          <div className="relative mt-6 space-y-3">
+            {service.points.map((point) => (
+              <div key={point} className="flex items-center gap-3 text-sm font-semibold text-slate-700">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-50 text-cyan-600">
+                  ✓
+                </span>
+                {point}
               </div>
             ))}
           </div>
-        </section>
+
+          <a
+            href="#contact"
+            className="relative mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-cyan-600"
+          >
+            Discuter d’un projet <span>→</span>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div className="mx-auto mt-12 grid max-w-7xl gap-6 rounded-[2rem] bg-slate-950 p-8 text-white md:grid-cols-4">
+      {[
+        ["01", "Comprendre", "Analyse du besoin, des données et des objectifs métier."],
+        ["02", "Structurer", "Nettoyage, modélisation et fiabilisation des données."],
+        ["03", "Visualiser", "Création de dashboards clairs, interactifs et exploitables."],
+        ["04", "Décider", "Recommandations concrètes pour passer à l’action."],
+      ].map(([number, title, text]) => (
+        <div key={number} className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/10">
+          <p className="text-sm font-black text-cyan-300">{number}</p>
+          <h4 className="mt-3 text-lg font-bold">{title}</h4>
+          <p className="mt-3 text-sm leading-6 text-slate-300">{text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
         <section className="bg-white px-6 py-20 lg:px-8">
           <SectionTitle eyebrow="Expérience internationale" title="Engagement terrain & humanitaire" subtitle="Interventions dans des contextes internationaux et humanitaires à fort enjeu (ONU, environnement & climat, WASH)." />
