@@ -302,6 +302,28 @@ function App() {
   </div>
 </section>
 
+<section className="bg-white px-6 py-20 lg:px-8">
+  <SectionTitle
+    eyebrow="Impact"
+    title="Des résultats concrets"
+    subtitle="Des solutions data qui produisent un impact mesurable."
+  />
+
+  <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+    {[
+      ["+50%", "Gain de temps", "Automatisation des reportings Excel et Power BI"],
+      ["-30%", "Erreurs data", "Amélioration de la qualité et cohérence des données"],
+      ["x3", "Vitesse d’analyse", "Optimisation SQL et structuration des données"],
+    ].map(([value, title, desc]) => (
+      <div key={title} className="rounded-3xl bg-slate-50 p-8 text-center shadow-sm ring-1 ring-slate-200">
+        <p className="text-4xl font-black text-cyan-600">{value}</p>
+        <h3 className="mt-3 text-lg font-bold text-slate-950">{title}</h3>
+        <p className="mt-2 text-sm text-slate-600">{desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
         <section className="bg-white px-6 py-20 lg:px-8">
           <SectionTitle eyebrow="Expérience internationale" title="Engagement terrain & humanitaire" subtitle="Interventions dans des contextes internationaux et humanitaires à fort enjeu (ONU, environnement & climat, WASH)." />
           <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2">
